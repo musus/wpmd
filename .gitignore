@@ -107,3 +107,4 @@ Temporary Items
 
 package-lock.json
 .npmrc
+.idea
