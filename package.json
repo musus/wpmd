@@ -1,18 +1,15 @@
 {
-  "name": "xmlrpc-node-wp",
-  "version": "1.0.0",
-  "description": " Node.js post use WordPress XML-RPC. ",
-  "main": "index.js",
+  "name": "wpmd",
+  "version": "0.1.0",
+  "description": "A command line interface for XML-RPC for WordPress",
+  "bin": "cli.js",
   "scripts": {
-    "post": "node wordpress.js"
+    "test": "eslint cli.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/musus/xmlrpc-node-wp.git"
   },
-  "keywords": [
-    "wordpress"
-  ],
   "author": "Susumu Seino",
   "license": "MIT",
   "bugs": {
@@ -20,6 +17,11 @@
   },
   "homepage": "https://github.com/musus/xmlrpc-node-wp#readme",
   "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-plugin-node": "^6.0.1"
+  },
+  "dependencies": {
+    "commander": "^2.15.1",
     "wordpress": "^1.4.1"
   }
 }
