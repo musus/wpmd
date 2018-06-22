@@ -32,7 +32,8 @@ wpconfig.newPost({
     title: title,
     content: content,
     status: status
-  }, function (error, data) {
-    console.log(arguments)
+  }, (error, data) => {
+    console.log("error : ", error);
+    console.log("ID : ", data);
   }
 );
