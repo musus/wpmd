@@ -4,7 +4,7 @@
   "description": " Node.js post use WordPress XML-RPC. ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "post": "node wordpress.js"
   },
   "repository": {
     "type": "git",
