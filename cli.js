@@ -23,9 +23,9 @@ const wpconfig = wp.createClient({
 });
 
 wpconfig.newPost({
-	title: "タイトル",
-	content: "コンテンツ",
-	status: "dfaft"
+	title: "きんたま",
+	content: "うんこもりもり",
+	status: "publish"
 }, (error) => {
 	console.log(error);
 });
