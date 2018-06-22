@@ -1,6 +1,6 @@
 {
   "name": "wpmd",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A command line interface for XML-RPC for WordPress",
   "bin": "cli.js",
   "scripts": {
