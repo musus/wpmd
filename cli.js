@@ -17,7 +17,7 @@ program
 .parse(process.argv);
 
 const user = program.user;
-const pass = program.password;
+const password = program.password;
 const title = program.title;
 const content = program.content;
 const status = program.status;
@@ -25,13 +25,11 @@ const status = program.status;
 const wpconfig = wp.createClient({
   url: program.args[0],
   username: user,
-  password: pass
+  password
 });
 
 wpconfig.newPost({
-    title: title,
-    content: content,
-    status: status
+    title, content, status
   }, (error, data) => {
     console.log("error : ", error);
     console.log("ID : ", data);
