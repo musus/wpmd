@@ -3,7 +3,3 @@ node_js:
 - '8'
 - '9'
 - '10'
-before_script:
-  - npm install wordpress
-script:
-  - "node wordpress.js"
