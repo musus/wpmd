@@ -13,17 +13,20 @@ program
   .option('--password <password>', 'The password for the WordPress account.')
 .parse(process.argv);
 
-// var wordpress = require("wordpress");
-// var wpconfig = wordpress.createClient({
-// 	url: "url",
-// 	username: "username",
-// 	password: "password"
-// });
+const user = program.user;
+const pass = program.password;
 
-// wpconfig.newPost({
-// 	title: "タイトル",
-// 	content: "コンテンツ",
-// 	status: "dfaft"
-// }, function (error, data) {
-// 	console.log(arguments);
-// });
+var wordpress = require("wordpress");
+var wpconfig = wordpress.createClient({
+	url: program.args[0],
+	username: user,
+	password: pass
+});
+
+wpconfig.newPost({
+	title: "タイトル",
+	content: "コンテンツ",
+	status: "dfaft"
+}, function (error, data) {
+	console.log(arguments);
+});
