@@ -31,8 +31,7 @@ const wpconfig = wp.createClient({
 wpconfig.newPost({
   title: title,
   content: content,
-  status: status,
-}, (error) = > {
+  status: status
+}, (error) => {
   console.log(error);
-})
-;
+});
