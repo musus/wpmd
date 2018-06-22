@@ -16,8 +16,7 @@ program
 const user = program.user;
 const pass = program.password;
 
-var wordpress = require("wordpress");
-var wpconfig = wordpress.createClient({
+const wpconfig = wp.createClient({
 	url: program.args[0],
 	username: user,
 	password: pass
@@ -27,6 +26,6 @@ wpconfig.newPost({
 	title: "タイトル",
 	content: "コンテンツ",
 	status: "dfaft"
-}, function (error, data) {
-	console.log(arguments);
+}, (error) => {
+	console.log(error);
 });
