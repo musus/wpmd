@@ -5,6 +5,7 @@
 const wp = require("wordpress");
 const program = require('commander');
 const pkg = require('./package.json');
+const wpconfig = require("./wp-config")
 
 program
 .version(pkg.version)
@@ -16,19 +17,26 @@ program
 .option('--status <status>', 'The status for the Post title .')
 .parse(process.argv);
 
-const user = program.user;
-const password = program.password;
-const title = program.title;
+
+const user = wpconfig.user;
+const password = wpconfig.password;
+const configtitle = program.title;
+
+if (configtitle == null) {
+  console.log('Nothing title on wp-config.');
+  var title = wpconfig.title;
+}
+
 const content = program.content;
 const status = program.status;
 
-const wpconfig = wp.createClient({
+const wpmdUser = wp.createClient({
   url: program.args[0],
   username: user,
   password
 });
 
-wpconfig.newPost({
+wpmdUser.newPost({
     title, content, status
   }, (error, data) => {
     console.log("error : ", error);
