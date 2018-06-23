@@ -3,7 +3,7 @@
 WPMD is a Markdown importer user interfaces for WordPress.
 
 
-## How to use 
+## Installation 
 
 ```
 $ mkdir wpmd
@@ -12,6 +12,14 @@ $ npm install wpmd -g .
 ```
 
 Update to wp-config.js
+
+```
+exports.user = "Your Username";
+exports.password = "Your Password";
+exports.title = "FRITZ and MAYONESE" ;
+
+
+```
 
 
 ```
