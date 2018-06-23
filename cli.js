@@ -5,7 +5,7 @@
 const wp = require("wordpress");
 const program = require('commander');
 const pkg = require('./package.json');
-const wpconfig = require("./wp-config")
+const wpconfig = require("./wp-config");
 
 program
 .version(pkg.version)
