@@ -1,4 +1,4 @@
-# WPMD - [![Build Status](https://travis-ci.org/musus/xmlrpc-node-wp.svg?branch=master)](https://travis-ci.org/musus/xmlrpc-node-wp)
+# WPMD - [![Build Status](https://travis-ci.org/musus/wpmd.svg?branch=master)](https://travis-ci.org/musus/wpmd)
 
 WPMD is a Markdown importer user interfaces for WordPress.
 
