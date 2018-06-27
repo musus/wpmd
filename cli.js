@@ -29,15 +29,15 @@ if (optionTitle == null) {
 
 const optionContent = program.content;
 if (optionContent == null) {
-  function readFile(path) {
-    fs.readFile(path, 'utf8', function (err, data) {
-      if (err) {
-        throw err;
-      }
-      console.log(data);
+  const fs = require("fs");
+  function markdownImport(path) {
+    return new Promise(function(text) {
+      fs.readFile(path, 'utf8', function (err, data) {
+        text(data);
+      });
     });
   }
-  readFile("import.md");
+  var content = markdownImport('import.md');
 }
 
 
@@ -50,7 +50,7 @@ const wpmdUser = wp.createClient({
 });
 
 wpmdUser.newPost({
-    title, status
+    title, content, status
   }, (error, data) => {
     console.log("error : ", error);
     console.log("ID : ", data);
