@@ -22,6 +22,8 @@
   },
   "dependencies": {
     "commander": "^2.15.1",
+    "fs": "0.0.1-security",
+    "markdown-it": "^8.4.1",
     "wordpress": "^1.4.1"
   }
 }
