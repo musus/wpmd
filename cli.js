@@ -6,6 +6,7 @@ const wp = require("wordpress");
 const program = require('commander');
 const pkg = require('./package.json');
 const wpconfig = require("./wp-config");
+const fs = require("fs");
 
 program
 .version(pkg.version)
@@ -17,17 +18,29 @@ program
 .option('--status <status>', 'The status for the Post title .')
 .parse(process.argv);
 
-
 const user = wpconfig.user;
 const password = wpconfig.password;
-const configtitle = program.title;
 
-if (configtitle == null) {
-  console.log('Nothing title on wp-config.');
-  var title = wpconfig.title;
+const optionTitle = program.title;
+if (optionTitle == null) {
+  console.log('Nothing title option');
+  var title = "None title";
 }
 
-const content = program.content;
+const optionContent = program.content;
+if (optionContent == null) {
+  function readFile(path) {
+    fs.readFile(path, 'utf8', function (err, data) {
+      if (err) {
+        throw err;
+      }
+      console.log(data);
+    });
+  }
+  readFile("import.md");
+}
+
+
 const status = program.status;
 
 const wpmdUser = wp.createClient({
@@ -37,7 +50,7 @@ const wpmdUser = wp.createClient({
 });
 
 wpmdUser.newPost({
-    title, content, status
+    title, status
   }, (error, data) => {
     console.log("error : ", error);
     console.log("ID : ", data);
