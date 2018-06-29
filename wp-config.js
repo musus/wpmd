@@ -1,3 +1,3 @@
-exports.user = "";
-exports.password = "";
-exports.title = "" ;
+exports.user = "admin";
+exports.password = "admin";
+exports.title = "ueueeue" ;

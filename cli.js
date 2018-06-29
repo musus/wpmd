@@ -7,6 +7,7 @@ const program = require('commander');
 const pkg = require('./package.json');
 const wpconfig = require("./wp-config");
 const fs = require("fs");
+require('dotenv').config();
 
 program
 .version(pkg.version)
@@ -18,8 +19,8 @@ program
 .option('--status <status>', 'The status for the Post title .')
 .parse(process.argv);
 
-const user = wpconfig.user;
-const password = wpconfig.password;
+const user =  process.env.NODE_USER;
+const password = process.env.NODE_PASSWORD;
 
 const optionTitle = program.title;
 if (optionTitle == null) {
