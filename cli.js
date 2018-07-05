@@ -33,15 +33,16 @@ const optionContent = program.content;
 let content;
 
 function markdownImport(path) {
-  return fs.readFileSync(path, 'utf8', function (err, text) {
+  return fs.readFileSync(path, 'utf8', (err) => {
   });
 }
 
-const mdcontent = markdownImport('./import.md');
+if (optionContent == null) {
+  const mdcontent = markdownImport('./import.md');
 
-const md = new mdIt();
-content = md.render(mdcontent);
-  
+  const md = new mdIt();
+  content = md.render(mdcontent);
+}
 
 const status = program.status;
 
@@ -55,10 +56,10 @@ wpmdUser.newPost({
     title, content, status
   }, (error, data) => {
     if (error) {
-      console.log("ERROR : " + error.faultString);
+      console.log('ERROR : ${error.faultString}');
     }
     if (data) {
-      console.log("Post done. ID is", data);
+      console.log('Post done. ID is ${data}');
     }
   }
 );
