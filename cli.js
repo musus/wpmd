@@ -34,6 +34,9 @@ let content;
 
 function markdownImport(path) {
   return fs.readFileSync(path, 'utf8', (err) => {
+    if (err) {
+      console.log('ERROR : ${err.faultString}');
+    }
   });
 }
 
