@@ -5,8 +5,8 @@
 const wp = require("wordpress");
 const program = require('commander');
 const pkg = require('./package.json');
-const wpconfig = require("./wp-config");
 const fs = require("fs");
+const mdIt = require('markdown-it');
 require('dotenv').config();
 
 program
@@ -23,24 +23,25 @@ const user =  process.env.NODE_USER;
 const password = process.env.NODE_PASSWORD;
 
 const optionTitle = program.title;
+let title;
 if (optionTitle == null) {
   console.log('Nothing title option');
-  var title = "None title";
+  title = "None title";
 }
 
 const optionContent = program.content;
+let content;
 if (optionContent == null) {
-  const fs = require("fs");
-
   function markdownImport(path) {
-    return new Promise(function (text) {
-      fs.readFile(path, 'utf8', function (err, data) {
-        text(data);
-      });
+    return fs.readFileSync(path, 'utf8', function (err, text) {
     });
   }
 
-  var content = markdownImport('import.md');
+  const mdcontent = markdownImport('./import.md');
+
+  const md = new mdIt();
+  content = md.render(mdcontent);
+
 }
 
 
