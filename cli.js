@@ -41,7 +41,7 @@ function markdownImport(path) {
 }
 
 if (optionContent == null) {
-  const mdcontent = markdownImport('./import.md');
+  const mdcontent = markdownImport('./test/data/import.md');
 
   const md = new mdIt();
   content = md.render(mdcontent);
