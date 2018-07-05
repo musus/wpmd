@@ -3,3 +3,8 @@ node_js:
 - '8'
 - '9'
 - '10'
+
+env:
+  global:
+    - NODE_USER = Username
+    - NODE_PASSWORD = Password
