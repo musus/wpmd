@@ -19,7 +19,7 @@ program
 .option('--status <status>', 'The status for the Post title .')
 .parse(process.argv);
 
-const user =  process.env.NODE_USER;
+const user = process.env.NODE_USER;
 const password = process.env.NODE_PASSWORD;
 
 const optionTitle = program.title;
@@ -31,19 +31,17 @@ if (optionTitle == null) {
 
 const optionContent = program.content;
 let content;
-if (optionContent == null) {
-  function markdownImport(path) {
-    return fs.readFileSync(path, 'utf8', function (err, text) {
-    });
-  }
 
-  const mdcontent = markdownImport('./import.md');
-
-  const md = new mdIt();
-  content = md.render(mdcontent);
-
+function markdownImport(path) {
+  return fs.readFileSync(path, 'utf8', function (err, text) {
+  });
 }
 
+const mdcontent = markdownImport('./import.md');
+
+const md = new mdIt();
+content = md.render(mdcontent);
+  
 
 const status = program.status;
 
