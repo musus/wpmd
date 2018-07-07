@@ -19,8 +19,8 @@ program
 .option('--status <status>', 'The status for the Post title .')
 .parse(process.argv);
 
-const user = process.env.NODE_USER;
-const password = process.env.NODE_PASSWORD;
+const user = process.env.WP_USER;
+const password = process.env.WP_PASSWORD;
 
 const optionTitle = program.title;
 let title;
