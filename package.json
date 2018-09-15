@@ -27,6 +27,7 @@
     "commander": "^2.15.1",
     "fs": "0.0.1-security",
     "markdown-it": "^8.4.1",
+    "showdown": "^1.8.6",
     "wordpress": "^1.4.1"
   }
 }
